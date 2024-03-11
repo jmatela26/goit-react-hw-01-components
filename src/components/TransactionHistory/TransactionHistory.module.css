@@ -1,0 +1,82 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.transactionHistory {
+    border-collapse: collapse;
+    width: 600px;
+    margin: 2em auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    /* Ensures the border-radius affects child elements */
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.6s ease-out;
+}
+
+.tableHeader {
+    background-color: #0077b6;
+    /* A modern blue shade */
+    color: #ffffff;
+    padding: 12px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    /* More spacing for a modern touch */
+}
+
+.tableRow {
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.tableRow:hover {
+    background-color: #f1f7fd;
+    /* A light blue that matches the header */
+    transform: translateY(-3px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tableData {
+    padding: 12px;
+    text-align: center;
+    color: #5a5a5a;
+    /* A softer color for the data */
+    font-weight: 500;
+    /* Medium weight for data legibility */
+    transition: color 0.3s ease;
+}
+
+.tableData:hover {
+    color: #0077b6;
+    /* Harmonizing with the header color */
+    cursor: pointer;
+}
+
+/* Styles for even and odd rows */
+.tableRow:nth-child(odd) {
+    background-color: #eff6fc;
+    /* A subtle zebra striping effect */
+}
+
+.tableData:first-of-type {
+    text-transform: capitalize;
+}
+
+.tableRow:last-child .tableData {
+    border-bottom: none;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+    .transactionHistory {
+        width: 90%;
+        margin-top: 1em;
+    }
+}
